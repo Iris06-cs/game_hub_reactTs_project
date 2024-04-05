@@ -16,7 +16,7 @@ const useGames = () => {
       .get<FetchedGames>("/games")
       .then((res) => setGames(res.data.results))
       .catch((err) => setError(err.message));
-  });
+  }, []);
   return { games, error };
 };
 export default useGames;
